@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechNova | Products</title>
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold fs-3 text-primary" href="index.html">
+
+            <i class="fa-solid fa-bolt"></i> TechNova
+
+        </a>
+
+        <button class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse"
+            id="navbarNav">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                        href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link active"
+                        href="products.html">
+
+                        Products
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                        href="about.html">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                        href="contact.html">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                        href="faq.html">
+
+                        FAQ
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <div class="d-flex gap-4">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="products-banner">
+
+<div class="container text-center">
+
+<h1 class="display-4 fw-bold">
+
+Our Products
+
+</h1>
+
+<p class="lead">
+
+Explore premium electronics from top brands.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= SEARCH ================= -->
+
+<section class="py-5">
+
+<div class="container">
+
+<div class="row mb-5">
+
+<div class="col-lg-8">
+
+<input
+id="searchInput"
+type="text"
+class="form-control form-control-lg"
+placeholder="Search Products...">
+
+</div>
+
+<div class="col-lg-4">
+
+<select
+id="categoryFilter"
+class="form-select form-select-lg">
+
+<option value="all">All Categories</option>
+
+<option value="phone">Smartphones</option>
+
+<option value="laptop">Laptops</option>
+
+<option value="watch">Smart Watches</option>
+
+<option value="headphone">Headphones</option>
+
+</select>
+
+</div>
+
+</div>
+
+<!-- ================= PRODUCT GRID ================= -->
+
+<div class="row g-4"
+id="productGrid">
+<!-- ================= PRODUCT 1 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="phone">
+
+    <div class="card product-card h-100">
+
+        <span class="badge bg-danger position-absolute m-3">NEW</span>
+
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600"
+            class="card-img-top" alt="iPhone">
+
+        <div class="card-body">
+
+            <h5 class="card-title">iPhone 16 Pro</h5>
+
+            <p class="text-muted">Apple Smartphone</p>
+
+            <h4 class="text-primary">₹1,29,999</h4>
+
+            <p class="text-warning">★★★★★</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+            <button class="btn btn-outline-dark w-100 view-details">
+            View Details
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 2 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="phone">
+
+    <div class="card product-card h-100">
+
+        <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=600"
+            class="card-img-top" alt="Samsung">
+
+        <div class="card-body">
+
+            <h5>Samsung Galaxy S25 Ultra</h5>
+
+            <p class="text-muted">Samsung Smartphone</p>
+
+            <h4 class="text-primary">₹1,19,999</h4>
+
+            <p class="text-warning">★★★★★</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+            <button class="btn btn-outline-dark w-100 view-details">
+    View Details
+</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 3 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="laptop">
+
+    <div class="card product-card h-100">
+
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600"
+            class="card-img-top" alt="MacBook">
+
+        <div class="card-body">
+
+            <h5>MacBook Air M4</h5>
+
+            <p class="text-muted">Apple Laptop</p>
+
+            <h4 class="text-primary">₹1,09,999</h4>
+
+            <p class="text-warning">★★★★★</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+            <button class="btn btn-outline-dark w-100 view-details">
+    View Details
+</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 4 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="laptop">
+
+    <div class="card product-card h-100">
+
+        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600"
+            class="card-img-top" alt="Dell">
+
+        <div class="card-body">
+
+            <h5>Dell XPS 15</h5>
+
+            <p class="text-muted">Dell Laptop</p>
+
+            <h4 class="text-primary">₹1,49,999</h4>
+
+            <p class="text-warning">★★★★★</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+            <button class="btn btn-outline-dark w-100 view-details">
+    View Details
+</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 5 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="watch">
+
+    <div class="card product-card h-100">
+
+        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600"
+            class="card-img-top" alt="Watch">
+
+        <div class="card-body">
+
+            <h5>Galaxy Watch 7</h5>
+
+            <p class="text-muted">Samsung Smart Watch</p>
+
+            <h4 class="text-primary">₹29,999</h4>
+
+            <p class="text-warning">★★★★★</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+           <button class="btn btn-outline-dark w-100 view-details">
+    View Details
+</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 6 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="headphone">
+
+    <div class="card product-card h-100">
+
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"
+            class="card-img-top" alt="Headphones">
+
+        <div class="card-body">
+
+            <h5>Sony WH-1000XM5</h5>
+
+            <p class="text-muted">Wireless Headphones</p>
+
+            <h4 class="text-primary">₹24,999</h4>
+
+            <p class="text-warning">★★★★★</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+            <button class="btn btn-outline-dark w-100 view-details">
+    View Details
+</button>
+        </div>
+
+    </div>
+
+</div>
+<!-- ================= PRODUCT 7 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="headphone">
+
+    <div class="card product-card h-100">
+
+        <span class="badge bg-success position-absolute m-3">BEST SELLER</span>
+
+        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600"
+            class="card-img-top" alt="JBL Speaker">
+
+        <div class="card-body">
+
+            <h5>JBL Flip 6</h5>
+
+            <p class="text-muted">Bluetooth Speaker</p>
+
+            <h4 class="text-primary">₹11,999</h4>
+
+            <p class="text-warning">★★★★★</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+         <button class="btn btn-outline-dark w-100 view-details">
+    View Details
+</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 8 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="watch">
+
+    <div class="card product-card h-100">
+
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"
+            class="card-img-top" alt="Apple Watch">
+
+        <div class="card-body">
+
+            <h5>Apple Watch Series 10</h5>
+
+            <p class="text-muted">Smart Watch</p>
+
+            <h4 class="text-primary">₹49,999</h4>
+
+            <p class="text-warning">★★★★★</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+           <button class="btn btn-outline-dark w-100 view-details">
+    View Details
+</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 9 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="laptop">
+
+    <div class="card product-card h-100">
+
+        <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=600"
+            class="card-img-top" alt="HP Victus">
+
+        <div class="card-body">
+
+            <h5>HP Victus</h5>
+
+            <p class="text-muted">Gaming Laptop</p>
+
+            <h4 class="text-primary">₹84,999</h4>
+
+            <p class="text-warning">★★★★★</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+         <button class="btn btn-outline-dark w-100 view-details">
+    View Details
+</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 10 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="phone">
+
+    <div class="card product-card h-100">
+
+        <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?w=600"
+            class="card-img-top" alt="Google Pixel">
+
+        <div class="card-body">
+
+            <h5>Google Pixel 10</h5>
+
+            <p class="text-muted">Android Smartphone</p>
+
+            <h4 class="text-primary">₹89,999</h4>
+
+            <p class="text-warning">★★★★★</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+            <button class="btn btn-outline-dark w-100 view-details">
+    View Details
+</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 11 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="headphone">
+
+    <div class="card product-card h-100">
+
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"
+            class="card-img-top" alt="Boat">
+
+        <div class="card-body">
+
+            <h5>Boat Rockerz 550</h5>
+
+            <p class="text-muted">Wireless Headphones</p>
+
+            <h4 class="text-primary">₹2,999</h4>
+
+            <p class="text-warning">★★★★☆</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+            <button class="btn btn-outline-dark w-100 view-details">
+    View Details
+</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= PRODUCT 12 ================= -->
+
+<div class="col-md-6 col-lg-4 col-xl-3 product-item" data-category="laptop">
+
+    <div class="card product-card h-100">
+
+        <span class="badge bg-warning text-dark position-absolute m-3">SALE</span>
+
+        <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?w=600"
+            class="card-img-top" alt="ASUS">
+
+        <div class="card-body">
+
+            <h5>ASUS ROG Zephyrus</h5>
+
+            <p class="text-muted">Gaming Laptop</p>
+
+            <h4 class="text-primary">₹1,59,999</h4>
+
+            <p class="text-warning">★★★★★</p>
+
+            <button class="btn btn-primary w-100 mb-2 add-cart">
+                Add to Cart
+            </button>
+
+            <button class="btn btn-outline-dark w-100 view-details">
+    View Details
+</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-lg-6">
+
+<h3>
+<i class="fa-solid fa-bolt"></i>
+TechNova
+</h3>
+
+<p>
+Your trusted electronics destination for premium gadgets and accessories.
+</p>
+
+</div>
+
+<div class="col-lg-6 text-lg-end">
+
+<p>
+
+© 2026 TechNova
+
+</p>
+
+<p>
+
+Designed for Google Analytics Project
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
