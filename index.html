@@ -31,7 +31,24 @@
     gtag('config', 'G-KYJEDBVRTX');
     </script>
 
+<script>
 
+document.querySelectorAll(".nav-link")
+.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+gtag('event','navigation_click',{
+
+page:link.innerText
+
+});
+
+});
+
+});
+
+</script>
 </head>
 <script src="js/script.js"></script>
 <button id="topBtn">

@@ -473,7 +473,16 @@ contactForm.reset();
 }
 
 </script>
+<script>
 
+document.getElementById("contactForm")
+.addEventListener("submit",function(){
+
+gtag('event','contact_form_submit');
+
+});
+
+</script>
 </body>
 
 </html>

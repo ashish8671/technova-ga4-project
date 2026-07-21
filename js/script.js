@@ -10,7 +10,15 @@ if (countdown) {
     let minutes = 0;
     let seconds = 0;
 
+    let countdownTracked = false;
+
     setInterval(function () {
+
+        // Track countdown start only once
+        if (!countdownTracked) {
+            gtag('event', 'countdown_started');
+            countdownTracked = true;
+        }
 
         if (seconds > 0) {
 
@@ -48,6 +56,7 @@ if (countdown) {
 
 }
 
+
 /* ==========================================
         BACK TO TOP BUTTON
 ========================================== */
@@ -73,9 +82,7 @@ if (topBtn) {
     topBtn.addEventListener("click", function () {
 
         // GA4 Event
-        gtag("event", "back_to_top_click", {
-            button_name: "Back To Top"
-        });
+        gtag('event', 'back_to_top');
 
         window.scrollTo({
 
@@ -87,6 +94,7 @@ if (topBtn) {
     });
 
 }
+
 
 /* ==========================================
         PRODUCT SEARCH & FILTER
@@ -103,11 +111,6 @@ if (searchInput && categoryFilter) {
 
         const searchText = searchInput.value.toLowerCase();
         const selectedCategory = categoryFilter.value;
-
-        // GA4 Search Event
-        gtag("event", "search", {
-            search_term: searchText
-        });
 
         products.forEach(function (product) {
 
@@ -134,19 +137,34 @@ if (searchInput && categoryFilter) {
 
     }
 
-    searchInput.addEventListener("keyup", filterProducts);
-
-    categoryFilter.addEventListener("change", function () {
-
-        gtag("event", "category_filter", {
-            category: categoryFilter.value
-        });
+    // Search Tracking
+    searchInput.addEventListener("keyup", function () {
 
         filterProducts();
+
+        gtag('event', 'search', {
+
+            search_term: searchInput.value
+
+        });
+
+    });
+
+    // Category Filter Tracking
+    categoryFilter.addEventListener("change", function () {
+
+        filterProducts();
+
+        gtag('event', 'category_filter', {
+
+            category: categoryFilter.value
+
+        });
 
     });
 
 }
+
 
 /* ==========================================
         ADD TO CART BUTTON
@@ -160,20 +178,25 @@ if (cartButtons.length > 0) {
 
         button.addEventListener("click", function () {
 
-            const productName =
-                button.closest(".product-item")
-                ?.querySelector("h5")
-                ?.textContent || "Unknown Product";
+            let productName = "Unknown Product";
 
-            // GA4 Add to Cart Event
-            gtag("event", "add_to_cart", {
+            const product = button.closest(".product-item");
 
-                currency: "INR",
-                value: 1,
+            if (product) {
 
-                items: [{
-                    item_name: productName
-                }]
+                const title = product.querySelector("h5");
+
+                if (title) {
+
+                    productName = title.innerText;
+
+                }
+
+            }
+
+            gtag('event', 'add_to_cart', {
+
+                item_name: productName
 
             });
 
@@ -184,6 +207,7 @@ if (cartButtons.length > 0) {
     });
 
 }
+
 
 /* ==========================================
         VIEW DETAILS BUTTON
@@ -197,19 +221,25 @@ if (detailButtons.length > 0) {
 
         button.addEventListener("click", function () {
 
-            const productName =
-                button.closest(".product-item")
-                ?.querySelector("h5")
-                ?.textContent || "Unknown Product";
+            let productName = "Unknown Product";
 
-            // GA4 View Item Event
-            gtag("event", "view_item", {
+            const product = button.closest(".product-item");
 
-                currency: "INR",
+            if (product) {
 
-                items: [{
-                    item_name: productName
-                }]
+                const title = product.querySelector("h5");
+
+                if (title) {
+
+                    productName = title.innerText;
+
+                }
+
+            }
+
+            gtag('event', 'view_product_details', {
+
+                item_name: productName
 
             });
 
