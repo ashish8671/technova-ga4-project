@@ -13,7 +13,9 @@ if (countdown) {
     setInterval(function () {
 
         if (seconds > 0) {
+
             seconds--;
+
         } else {
 
             if (minutes > 0) {
@@ -70,6 +72,11 @@ if (topBtn) {
 
     topBtn.addEventListener("click", function () {
 
+        // GA4 Event
+        gtag("event", "back_to_top_click", {
+            button_name: "Back To Top"
+        });
+
         window.scrollTo({
 
             top: 0,
@@ -97,6 +104,11 @@ if (searchInput && categoryFilter) {
         const searchText = searchInput.value.toLowerCase();
         const selectedCategory = categoryFilter.value;
 
+        // GA4 Search Event
+        gtag("event", "search", {
+            search_term: searchText
+        });
+
         products.forEach(function (product) {
 
             const productName = product.querySelector("h5").textContent.toLowerCase();
@@ -123,7 +135,16 @@ if (searchInput && categoryFilter) {
     }
 
     searchInput.addEventListener("keyup", filterProducts);
-    categoryFilter.addEventListener("change", filterProducts);
+
+    categoryFilter.addEventListener("change", function () {
+
+        gtag("event", "category_filter", {
+            category: categoryFilter.value
+        });
+
+        filterProducts();
+
+    });
 
 }
 
@@ -138,6 +159,23 @@ if (cartButtons.length > 0) {
     cartButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
+
+            const productName =
+                button.closest(".product-item")
+                ?.querySelector("h5")
+                ?.textContent || "Unknown Product";
+
+            // GA4 Add to Cart Event
+            gtag("event", "add_to_cart", {
+
+                currency: "INR",
+                value: 1,
+
+                items: [{
+                    item_name: productName
+                }]
+
+            });
 
             alert("✅ Product added to cart!");
 
@@ -158,6 +196,22 @@ if (detailButtons.length > 0) {
     detailButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
+
+            const productName =
+                button.closest(".product-item")
+                ?.querySelector("h5")
+                ?.textContent || "Unknown Product";
+
+            // GA4 View Item Event
+            gtag("event", "view_item", {
+
+                currency: "INR",
+
+                items: [{
+                    item_name: productName
+                }]
+
+            });
 
             window.location.href = "product-details.html";
 
